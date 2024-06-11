@@ -17,86 +17,72 @@
     <link rel="stylesheet" href="../css/selectize.bootstrap5.min.css">
     <link rel="stylesheet" href="../css/multi-select-tag.css">
 </head>
+<style>
+h4{
+    font-family:roboto;
+}
+</style>
 <body>
+
     
 <!-- Parte do header e nav -->
 <?php include '../php/header.php'; ?>
 
 <main class="container-fluid d-flex justify-content-center align-items-center">
-    <div class="form-group col-8 mt-5">
-        <form id="occurrenceForm" action="process_form.php" method="post" onsubmit="return validateForm()">
-            <div class="row">
-                <div class="col-xl-3 col-md-6 mt-3">
-                    <div class="form-group">
-                        <label for="date">Data</label>
-                        <input type="date" class="form-control" id="date" name="date" required>
-                    </div>
-                </div>
-             
-                <div class="col-xl-7 col-md-6 mt-3">
-    <div class="form-group ">
-        <label for="orgao">Assunto  Tratado </label>
-        <div class="custom-checkboxes d-flex justify-content-between ">
-            <div class="option form-control"><input type="checkbox" id="orgao1" name="orgao1" value="Orgao1">Consulta </div>
-            <div class="option form-control"><input type="checkbox" id="orgao2" name="orgao2" value="Orgao2">Treinamento </div>
-            <div class="option form-control"><input type="checkbox" id="orgao2" name="orgao2" value="Orgao2">Reuniao </div>
+    <div class="form-group col-8 mt-5" >
+        <form id="occurrenceForm" method="post" onsubmit="return validateForm()">
+        <div class="row ">
+    <div class="col-xl-2 col-md-6 mt-1">
+        <div class="form-group">
+            <label for="date">Data</label>
+            <input type="date" class="form-control" id="date" name="date" required>
+        </div>
+        
+<div class="col-xl-12 col-md-6 mb-4 mb-5" >
+    <div class="form-group">
+        <label for="estado">Status</label>
+        <select class="form-control" id="estado" name="estado" required>
+            <option value="">Selecione um status...</option>
+            <option value="">Fechado</option>
+            <option value="">Aberto</option>
+        </select>
+    </div>
+</div>
 
+    </div>
+    
+    <div class="col-xl-7 col-md-6 mb-5">
+    <label for="orgao">Assunto Tratado</label>
+    <div class="row custom-checkboxes">
+        <div class="form-control col-sm-10 mt-2">
+            <input type="checkbox" id="orgao1" name="orgao1" value="Orgao1">
+            <label for="orgao1" class="ml-2">Admissão / Contrato de Prestador de Serviços</label>
+        </div>
+        <div class="form-control col-sm-10 mt-2">
+            <input type="checkbox" id="orgao2" name="orgao2" value="Orgao2">
+            <label for="orgao2" class="ml-3">Atualização de Dados</label>
+        </div>
+        <div class="form-control col-sm-10 mt-2">
+            <input type="checkbox" id="orgao3" name="orgao3" value="Orgao3">
+            <label for="orgao3" class="ml-2">Repasse</label>
         </div>
     </div>
 </div>
 
 
-                  <div class="col-xl-2 col-md-6 mt-3">
-                    <div class="form-group">
-                        <label for="orgao">Status</label>
-                        <button class="form-control">Fechado</button>
-                    </div>
-                </div>
-
-                <div class="col-xl-3 col-md-6 mt-3">
-                    <label for="nome">Nome do Profissional</label>
+         
+            <div class="border p-3">
+            <div class="row">
+            <h4>DADOS DO PROFISSIONAL</h4>
+                <div class="col-xl-6 col-md-6 mt-3">
+                    <label for="nome">Nome</label>
                     <input type="text" class="form-control" id="nome" name="nome" maxlength="80" required>
                 </div>
                 <div class="col-xl-3 col-md-6 mt-3">
-                    <label for="registro">Registro do Profissional</label>
+                    <label for="registro">CRM</label>
                     <input type="text" class="form-control" id="registro" name="registro" maxlength="12" required>
                 </div>
-                <div class="col-xl-3 col-md-6 mt-3">
-                 
-                        <label for="estado">Estado</label>
-                        <select class="form-control" id="estado" name="estado" required>
-                            <option value="">Selecione um estado...</option>
-                            <option value="AC">Acre</option>
-                            <option value="AL">Alagoas</option>
-                            <option value="AP">Amapá</option>
-                            <option value="AM">Amazonas</option>
-                            <option value="BA">Bahia</option>
-                            <option value="CE">Ceará</option>
-                            <option value="DF">Distrito Federal</option>
-                            <option value="ES">Espírito Santo</option>
-                            <option value="GO">Goiás</option>
-                            <option value="MA">Maranhão</option>
-                            <option value="MT">Mato Grosso</option>
-                            <option value="MS">Mato Grosso do Sul</option>
-                            <option value="MG">Minas Gerais</option>
-                            <option value="PA">Pará</option>
-                            <option value="PB">Paraíba</option>
-                            <option value="PR">Paraná</option>
-                            <option value="PE">Pernambuco</option>
-                            <option value="PI">Piauí</option>
-                            <option value="RJ">Rio de Janeiro</option>
-                            <option value="RN">Rio Grande do Norte</option>
-                            <option value="RS">Rio Grande do Sul</option>
-                            <option value="RO">Rondônia</option>
-                            <option value="RR">Roraima</option>
-                            <option value="SC">Santa Catarina</option>
-                            <option value="SP">São Paulo</option>
-                            <option value="SE">Sergipe</option>
-                            <option value="TO">Tocantins</option>
-                            <!-- Adicione mais estados aqui -->
-                        </select>
-                    
-                </div>
+
                 <div class="col-xl-3 col-md-6 mt-3">
                     <div class="form-group">
                         <label for="orgao">Órgão</label>
@@ -132,11 +118,12 @@
                         </select>
                     </div>
                 </div>
-
                 <div class="col-xl-3 col-md-6 mt-3">
                     <label for="celular">Cpf</label>
                     <input type="tel" class="form-control" id="celular" name="celular" required placeholder="999.999.999-99">
                 </div>
+               
+
                 <div class="col-xl-3 col-md-6 mt-3">
                     <div class="form-group">
                         <label for="date">Data de Nascimento</label>
@@ -144,7 +131,7 @@
                     </div>
                 </div>
                 <div class="col-xl-3 col-md-6 mt-3">
-                    <label for="celular">Número de Celular</label>
+                    <label for="celular">Telefone</label>
                     <input type="tel" class="form-control" id="celular" name="celular" required placeholder="(99) 9 9999-9999">
                 </div>
                 <div class="col-xl-3 col-md-6 mt-3">
@@ -155,31 +142,34 @@
                     </div>
                 </div>
                  
-                <div class="col-xl-12 col-md-6 mt-3">
-                    <label for="descricao">Especialidades</label>
-                    <textarea class="form-control" id="descricao" name="descricao" rows="3" maxlength="1000" required></textarea>
+                <div class="col-xl-12 col-md-6 mt-3 mb-4">
+                    <label for="descricao">Especialidade(s)</label>
+                    <textarea class="form-control" id="descricao-especialidades" name="descricao-especialidades" rows="3" maxlength="1000" required></textarea>
                 </div>
+                </div>
+                </div>
+                <br>
+               
+                <div class="border p-3 mt-4">
+                <h4>DESCRIÇÃO DO ATENDIMENTO</h4>
                 <div class="col-xl-12 col-md-6 mt-3">
                     <label for="descricao">Descrição</label>
                     <textarea class="form-control" id="descricao" name="descricao" rows="3" maxlength="1000" required></textarea>
                 </div>
 
                 <div class="col-xl-12 col-md-6 mt-3 mb-3">
-                    <label for="acoes">Ações</label>
+                    <label for="acoes">Ações previstas</label>
                     <textarea class="form-control" id="acoes" name="acoes" rows="3" maxlength="1000" required></textarea>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary" onclick="enviarFormulario()">Enviar</button>
-            <script>
-       function enviarFormulario() {
-            window.location.href = '../php/historico.php'; // Altere o nome do arquivo e o caminho conforme necessário
-        }
+      
+            <div class="d-flex justify-content-center align-items-center mt-4" >
+            <button style="width:120px; " type="button" id="enviarButton" class="btn btn-primary">Enviar</button>
+            </div>
 
-
-
-            </script>
 
         </form>
+        <br>
     </div>  
 </main>
 

@@ -1,75 +1,75 @@
 
-function validateForm() {
-    var isValid = true;
-    var requiredFields = ['date', 'orgao', 'assunto', 'nome', 'registro', 'celular', 'email', 'descricao', 'acoes'];
+    // Definindo a função enviarFormulario
+    function enviarFormulario() {
+        var date = document.getElementById("date").value;
+        var orgao1 = document.getElementById("orgao1").checked;
+        var orgao2 = document.getElementById("orgao2").checked;
+        var nome = document.getElementById("nome").value;
+        var registro = document.getElementById("registro").value;
+        var estado = document.getElementById("estado").value;
+        var orgao = document.getElementById("orgao").value;
+        var celular = document.getElementById("celular").value;
+        var nascimento = document.getElementById("nascimento").value;
+        var email = document.getElementById("email").value;
+        var descricaoEspecialidades = document.getElementById("descricaoEspecialidades").value;
+        var descricao = document.getElementById("descricao").value;
+        var acoes = document.getElementById("acoes").value;
 
-    requiredFields.forEach(function(field) {
-        var input = document.getElementById(field);
-        if (!input.value) {
-            input.classList.add('is-invalid');
-            isValid = false;
-        } else {
-            input.classList.remove('is-invalid');
+        // Aqui você pode fazer a validação dos campos se necessário
+
+        // Exemplo de validação simples
+        if (nome.trim() === "" || email.trim() === "") {
+            Swal.fire({
+                title: "Erro no registro",
+                text: "Preencha todos os campos obrigatórios",
+                icon: "error"
+            });
+            return;   
+            // Aborta o envio do formulário se houver campos obrigatórios vazios
         }
-    });
 
-    var email = document.getElementById('email');
-    var emailValue = email.value;
-    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!emailPattern.test(emailValue)) {
-        email.classList.add('is-invalid');
-        isValid = false;
-    } else {
-        email.classList.remove('is-invalid');
-    }
-
-    console.log('Formulário é válido?', isValid);
-    return isValid;
-}
-
-
-function enviarFormulario() {
-    // Validar os campos do formulário
-    if (validateForm(isValid)) {
-
+        // Se todos os campos estiverem preenchidos, você pode prosseguir com o envio do formulário
         $.ajax({
-            url: 'forms/enviarindexbanco.php', // Verifique se o caminho está correto
-            type: 'POST',
-            data: $('#occurrenceForm').serialize(), // Serialize o formulário para enviar os dados
-            success: function(response) {
-                // Exibir uma mensagem de sucesso
+            url: 'enviarindexbanco.php', // Substitua 'seu_arquivo_php.php' pelo caminho do seu arquivo PHP de destino
+            method: 'POST',
+            data: {
+                date: date,
+                orgao1: orgao1,
+                orgao2: orgao2,
+                nome: nome,
+                registro: registro,
+                estado: estado,
+                orgao: orgao,
+                celular: celular,
+                nascimento: nascimento,
+                email: email,
+                descricaoEspecialidades: descricaoEspecialidades,
+                descricao: descricao,
+                acoes: acoes
+            },
+            success: function (response) {
                 Swal.fire({
-                    icon: 'success',
-                    title: 'Sucesso!',
-                    text: response, // Exemplo: exibir a resposta do PHP (como "Dados inseridos com sucesso!")
-                    confirmButtonText: 'OK'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        // Redirecionar para a página de histórico após clicar em "OK"
-                        window.location.href = '../php/historico.php'; // Verifique se o caminho está correto
-                        console.log('Redirecionamento para histórico após confirmação');
-                    }
+                    title: "Registro enviado com sucesso!",
+                    text: response,
+                    icon: "success"
                 });
             },
-            error: function(xhr, status, error) {
-                // Lidar com erros de requisição, se necessário
+            error: function (error) {
                 Swal.fire({
-                    icon: 'error',
-                    title: 'Erro!',
-                    text: 'Ocorreu um erro ao enviar o formulário. Por favor, tente novamente.', // Mensagem de erro padrão
-                    confirmButtonText: 'OK'
+                    title: "Erro",
+                    text: "Ocorreu um erro ao enviar o registro.",
+                    icon: "error"
                 });
-                console.error(xhr.responseText); // Exemplo: exibir o erro retornado pelo PHP
+                console.error('Erro na solicitação AJAX:', error);
             }
         });
-    } else {
-        // Se o formulário não for válido, exibir uma mensagem de erro
-        Swal.fire({
-            icon: 'error',
-            title: 'Erro!',
-            text: 'Por favor, preencha todos os campos obrigatórios.', // Mensagem de erro para campos não preenchidos
-            confirmButtonText: 'OK'
-        });
     }
-}
+
+    
+    var enviarButton = document.getElementById("enviarButton");
+
+    enviarButton.addEventListener("click", function() {
+       
+        enviarFormulario();
+    });
+;
