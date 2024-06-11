@@ -1,3 +1,7 @@
+body{
+    margin-bottom:2em;
+}
+
 .content-header  {
 
     background-color:#001f3f;  
@@ -5,29 +9,28 @@
     padding: 20px;
     align-items: center;
     color: aliceblue;
-
 }
+
 .content-header .titulo .rm{
 margin: 0;
 font-size: 35px;
 }
+
 .content-header .titulo .ra{
     font-size: 20px;
     margin: 0px;
-    }
-
+ }
 
 .txt-objetivo{
 margin-left: -20px;    }
 .logo_hospital{
     width: 70px;
     height: 70px;
-  }
+}
   
  #descricao  textarea {
     line-height: 1.5;
 }
-
 
 .custom-select .options {
     border: 1px solid #ccc;

@@ -23,11 +23,11 @@
                 </div>
             </div>
         </nav>
-        <div class="content-header shadow" style="border-bottom: solid 1px gray;">
+        <div class="content-header shadow" style="border-bottom: solid 1px gray; color: white;">
             <div class="container-fluid">
                 <div class="row py-1">
                     <div class="titulo">
-                        <p class="h1  text-light shadow" style="font-size: 25px;" > <?php echo isset($pageTitle) ? $pageTitle : "<p class='rm'> Relacionamento Médico </p>  <p class='ra'> Registro de atendimento <p/>"; ?></p>
+                        <p class="h1  text-light shadow" style="font-size: 25px;" > <?php echo isset($pageTitle) ? $pageTitle : "<b><h3 class='rm'> Relacionamento Médico </h3></b>  <p class='ra'> Registro de atendimento <p/>"; ?></p>
 
                     </div>
                 </div>

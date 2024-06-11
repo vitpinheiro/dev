@@ -32,15 +32,15 @@ h4{
     <div class="form-group col-8 mt-5" >
         <form id="occurrenceForm" method="post" onsubmit="return validateForm()">
         <div class="row ">
-    <div class="col-xl-2 col-md-6 mt-1">
+    <div class="col-xl-2 col-md-4 mt-1">
         <div class="form-group">
-            <label for="date">Data</label>
+            <label style="font-weight: 600;" for="date">Data</label>
             <input type="date" class="form-control" id="date" name="date" required>
         </div>
         
-<div class="col-xl-12 col-md-6 mb-4 mb-5" >
+<div class="col-xl-12 col-md-12 mb-4 mt-4 mb-5" >
     <div class="form-group">
-        <label for="estado">Status</label>
+        <label style="font-weight: 600;" for="estado">Status</label>
         <select class="form-control" id="estado" name="estado" required>
             <option value="">Selecione um status...</option>
             <option value="">Fechado</option>
@@ -51,20 +51,20 @@ h4{
 
     </div>
     
-    <div class="col-xl-7 col-md-6 mb-5">
-    <label for="orgao">Assunto Tratado</label>
+    <div class="col-xl-7  col-md-12 mb-5 mr-4" style="margin-left:5px;" >
+    <label style="font-weight: 600;" for="orgao">Assunto Tratado</label>
     <div class="row custom-checkboxes">
         <div class="form-control col-sm-10 mt-2">
             <input type="checkbox" id="orgao1" name="orgao1" value="Orgao1">
-            <label for="orgao1" class="ml-2">Admissão / Contrato de Prestador de Serviços</label>
+            <label for="orgao1" >Admissão / Contrato de Prestador de Serviços</label>
         </div>
         <div class="form-control col-sm-10 mt-2">
             <input type="checkbox" id="orgao2" name="orgao2" value="Orgao2">
-            <label for="orgao2" class="ml-3">Atualização de Dados</label>
+            <label for="orgao2" >Atualização de Dados</label>
         </div>
         <div class="form-control col-sm-10 mt-2">
             <input type="checkbox" id="orgao3" name="orgao3" value="Orgao3">
-            <label for="orgao3" class="ml-2">Repasse</label>
+            <label for="orgao3" >Repasse</label>
         </div>
     </div>
 </div>
@@ -73,19 +73,19 @@ h4{
          
             <div class="border p-3">
             <div class="row">
-            <h4>DADOS DO PROFISSIONAL</h4>
+            <h4 style="font-weight: bold;">DADOS DO PROFISSIONAL</h4>
                 <div class="col-xl-6 col-md-6 mt-3">
-                    <label for="nome">Nome</label>
+                    <label style="font-weight: 600;" for="nome">Nome</label>
                     <input type="text" class="form-control" id="nome" name="nome" maxlength="80" required>
                 </div>
                 <div class="col-xl-3 col-md-6 mt-3">
-                    <label for="registro">CRM</label>
+                    <label style="font-weight: 600;" for="registro">CRM</label>
                     <input type="text" class="form-control" id="registro" name="registro" maxlength="12" required>
                 </div>
 
                 <div class="col-xl-3 col-md-6 mt-3">
                     <div class="form-group">
-                        <label for="orgao">Órgão</label>
+                        <label style="font-weight: 600;" for="orgao">Órgão</label>
                         <select class="form-control" id="orgao" name="orgao" required>
                             <option value="">Selecione...</option>
                             <option value="Orgao1">CRM-AC</option>
@@ -119,23 +119,23 @@ h4{
                     </div>
                 </div>
                 <div class="col-xl-3 col-md-6 mt-3">
-                    <label for="celular">Cpf</label>
+                    <label style="font-weight: 600;" for="celular">Cpf</label>
                     <input type="tel" class="form-control" id="celular" name="celular" required placeholder="999.999.999-99">
                 </div>
                
 
                 <div class="col-xl-3 col-md-6 mt-3">
                     <div class="form-group">
-                        <label for="date">Data de Nascimento</label>
+                        <label style="font-weight: 600;" for="date">Data de Nascimento</label>
                         <input type="date" class="form-control" id="date" name="date" required>
                     </div>
                 </div>
                 <div class="col-xl-3 col-md-6 mt-3">
-                    <label for="celular">Telefone</label>
+                    <label style="font-weight: 600;" for="celular">Telefone</label>
                     <input type="tel" class="form-control" id="celular" name="celular" required placeholder="(99) 9 9999-9999">
                 </div>
                 <div class="col-xl-3 col-md-6 mt-3">
-                    <label for="email">E-mail</label>
+                    <label style="font-weight: 600;" for="email">E-mail</label>
                     <input type="email" class="form-control" id="email" name="email" required>
                     <div class="invalid-feedback">
                         Por favor, insira um e-mail válido.
@@ -143,7 +143,7 @@ h4{
                 </div>
                  
                 <div class="col-xl-12 col-md-6 mt-3 mb-4">
-                    <label for="descricao">Especialidade(s)</label>
+                    <label style="font-weight: 600;" for="descricao">Especialidade(s)</label>
                     <textarea class="form-control" id="descricao-especialidades" name="descricao-especialidades" rows="3" maxlength="1000" required></textarea>
                 </div>
                 </div>
@@ -151,20 +151,20 @@ h4{
                 <br>
                
                 <div class="border p-3 mt-4">
-                <h4>DESCRIÇÃO DO ATENDIMENTO</h4>
+                <h4 style="font-weight: bold;">DESCRIÇÃO DO ATENDIMENTO</h4>
                 <div class="col-xl-12 col-md-6 mt-3">
-                    <label for="descricao">Descrição</label>
+                    <label style="font-weight: 600;" for="descricao">Descrição</label>
                     <textarea class="form-control" id="descricao" name="descricao" rows="3" maxlength="1000" required></textarea>
                 </div>
 
                 <div class="col-xl-12 col-md-6 mt-3 mb-3">
-                    <label for="acoes">Ações previstas</label>
+                    <label style="font-weight: 600;" for="acoes">Ações previstas</label>
                     <textarea class="form-control" id="acoes" name="acoes" rows="3" maxlength="1000" required></textarea>
                 </div>
             </div>
       
             <div class="d-flex justify-content-center align-items-center mt-4" >
-            <button style="width:120px; " type="button" id="enviarButton" class="btn btn-primary">Enviar</button>
+            <button style="width:120px; font-weight: bold;" type="button" id="enviarButton" class="btn btn-primary">Enviar</button>
             </div>
 
 
