@@ -21,6 +21,10 @@
 h4{
     font-family:roboto;
 }
+
+.form-control{
+    font-size: 0.85em;
+}
 </style>
 <body>
 
@@ -31,40 +35,127 @@ h4{
 <main class="container-fluid d-flex justify-content-center align-items-center">
     <div class="form-group col-8 mt-5" >
         <form id="occurrenceForm" method="post" onsubmit="return validateForm()">
-        <div class="row ">
-    <div class="col-xl-2 col-md-4 mt-1">
+        <div class="row">
+    <div class="col-xl-2 col-md-4 col-12 mt-4">
         <div class="form-group">
             <label style="font-weight: 600;" for="date">Data</label>
             <input type="date" class="form-control" id="date" name="date" required>
         </div>
-        
-<div class="col-xl-12 col-md-12 mb-4 mt-4 mb-5" >
-    <div class="form-group">
-        <label style="font-weight: 600;" for="estado">Status</label>
-        <select class="form-control" id="estado" name="estado" required>
-            <option value="">Selecione um status...</option>
-            <option value="">Fechado</option>
-            <option value="">Aberto</option>
-        </select>
+    </div>
+
+    <div class="col-xl-2 col-md-4 col-12 mb-4 mt-4 ">
+        <div class="form-group">
+            <label style="font-weight: 600;" for="estado">Status</label>
+            <select class="form-control" id="estado" name="estado" required>
+                <option value="">Selecione um status...</option>
+                <option value="Fechado">Fechado</option>
+                <option value="Aberto">Aberto</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="col-xl-8 col-md-12 col-12 mt-4 mb-5 ">
+        <label style="font-weight: 600;" for="orgao">Veículo de manifestação</label>
+        <div class="row custom-checkboxes">
+            <div class="col-sm-3 mb-1">
+                <div class="form-control">
+                    <input type="checkbox" id="veiculo1" name="veiculo1" value="veiculo1">
+                    <label for="veiculo1">Presencial</label>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-control">
+                    <input type="checkbox" id="veiculo3" name="veiculo3" value="veiculo3">
+                    <label for="veiculo3">WhatsApp</label>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-control">
+                    <input type="checkbox" id="veiculo2" name="veiculo2" value="veiculo2">
+                    <label for="veiculo2">E-mail</label>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-control">
+                    <input type="checkbox" id="veiculo4" name="veiculo4" value="veiculo4">
+                    <label style="font-weight: 600;" for="acoes">Outros</label>
+                    <textarea class="form-control" id="acoes2" name="acoes2" rows="1" maxlength="500" required></textarea>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
+
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="col-md-12 col-12 mb-5 mr-4 " style="margin-left:5px;">
+            <label style="font-weight: 600;" for="orgao">Assuntos Tratados</label>
+            <div class="row custom-checkboxes">
+                <div class="form-control col-sm-10">
+                    <input type="checkbox" id="orgao1" name="orgao1" value="Orgao1">
+                    <label for="orgao1">Atualização cadastral do Médico</label>
+                </div>
+                <div class="form-control col-sm-10">
+                    <input type="checkbox" id="orgao2" name="orgao2" value="Orgao2">
+                    <label for="orgao2">Atualização de procedimentos</label>
+                </div>
+                <div class="form-control col-sm-10">
+                    <input type="checkbox" id="orgao3" name="orgao3" value="Orgao3">
+                    <label for="orgao3">Cadastro Médico</label>
+                </div>
+                <div class="form-control col-sm-10">
+                    <input type="checkbox" id="orgao4" name="orgao4" value="Orgao4">
+                    <label for="orgao4">Demandas da Contabilidade</label>
+                </div>
+            </div>
+        </div>
     </div>
-    
-    <div class="col-xl-7  col-md-12 mb-5 mr-4" style="margin-left:5px;" >
-    <label style="font-weight: 600;" for="orgao">Assunto Tratado</label>
-    <div class="row custom-checkboxes">
-        <div class="form-control col-sm-10 mt-2">
-            <input type="checkbox" id="orgao1" name="orgao1" value="Orgao1">
-            <label for="orgao1" >Admissão / Contrato de Prestador de Serviços</label>
+
+    <div class="col-md-4">
+        <div class="col-md-12 col-12 mb-5 mt-4 m-3" style="margin-left:5px;">
+            <div class="row custom-checkboxes">
+                <div class="form-control col-sm-10">
+                    <input type="checkbox" id="orgao5" name="orgao5" value="Orgao5">
+                    <label for="orgao5">Demandas do Faturamento</label>
+                </div>
+                <div class="form-control col-sm-10">
+                    <input type="checkbox" id="orgao6" name="orgao6" value="Orgao6">
+                    <label for="orgao6">Demandas do INCOR</label>
+                </div>
+                <div class="form-control col-sm-10">
+                    <input type="checkbox" id="orgao7" name="orgao7" value="Orgao7">
+                    <label for="orgao7">Demandas do RH</label>
+                </div>
+                <div class="form-control col-sm-10">
+                    <input type="checkbox" id="orgao8" name="orgao8" value="Orgao8">
+                    <label for="orgao8">Demandas do setor financeiro</label>
+                </div>
+            </div>
         </div>
-        <div class="form-control col-sm-10 mt-2">
-            <input type="checkbox" id="orgao2" name="orgao2" value="Orgao2">
-            <label for="orgao2" >Atualização de Dados</label>
-        </div>
-        <div class="form-control col-sm-10 mt-2">
-            <input type="checkbox" id="orgao3" name="orgao3" value="Orgao3">
-            <label for="orgao3" >Repasse</label>
+    </div>
+
+    <div class="col-md-4">
+        <div class="col-md-12 col-12 mb-5 mt-4 m-4" style="margin-left:5px;">
+            <div class="row custom-checkboxes">
+                <div class="form-control col-sm-10">
+                    <input type="checkbox" id="orgao9" name="orgao9" value="Orgao9">
+                    <label for="orgao9">Demandas do setor de TI</label>
+                </div>
+                <div class="form-control col-sm-10">
+                    <input type="checkbox" id="orgao10" name="orgao10" value="Orgao10">
+                    <label for="orgao10">Estacionamento</label>
+                </div>
+                <div class="form-control col-sm-10">
+                    <input type="checkbox" id="orgao11" name="orgao11" value="Orgao11">
+                    <label for="orgao11">Repasse médico</label>
+                </div>
+                <div class="form-control col-sm-10">
+                    <input type="checkbox" id="orgao12" name="orgao12" value="Orgao12">
+                    <label for="orgao12">Outros</label><textarea class="form-control" id="acoes3" name="acoes3" rows="1" maxlength="500" required></textarea>
+                </div>
+            </div>
         </div>
     </div>
 </div>
